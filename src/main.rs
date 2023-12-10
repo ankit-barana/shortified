@@ -1,8 +1,10 @@
 pub mod database;
+pub mod site;
 
 #[macro_use] 
 extern crate rocket;
 use rocket::{response::Redirect, http::Status};
+use site::FRONT_END;
 use rocket::response::content;
 use sha2::{Digest, Sha256};  
 use rusqlite::Connection;
@@ -10,64 +12,7 @@ use base64;
 
 #[get("/")]
 fn index() -> content::RawHtml<& 'static str> {
-    content::RawHtml(r#"
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                color: black;
-            }
-        
-            body {
-                background-color: #1B1717;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-            }
-        
-            .logo {
-                color: #EEEBDD;
-                font-weight: bold;
-                font-size: 4em;
-                margin-bottom: 30px;
-            }
-
-            .tagline {
-                color: #DFDCCB;
-                font-size: 100%;
-            }
-            .wrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-        
-            .wrapper input {
-                background: #2e2727;
-                border: 2px solid rgb(255, 81, 0);
-                border-radius: 5px;
-                padding: 1rem 2rem;
-                width: 20vw;
-                margin-bottom: 20px;
-            }
-        </style>
-        <body>
-            <div class="logo">
-                <h1 >Shortified!</h1>
-                <p class="tagline">Official Selection: Programming Failures of The Century</p>   
-            </div>
-            <div class="wrapper">
-                <input type="text" placeholder="URL goes here" width="20vw"/>
-                <button>
-                    shorten
-                </button>
-            </div>
-        </body>
-    "#)
+    FRONT_END
 }
 
 #[launch]
