@@ -63,6 +63,10 @@ pub const FRONT_END: content::RawHtml<& 'static str> = content::RawHtml(r#"
             top: 345px
         }
 
+        .shortURL {
+            margin-top: 20px;
+        }
+
     </style>
         <body>
             <div class="logo">
@@ -70,11 +74,10 @@ pub const FRONT_END: content::RawHtml<& 'static str> = content::RawHtml(r#"
                 <p class="tagline">Shorten 🔗s quickly and effortlessly. Simplify. Share. Go. 🚀</p>   
             </div>
             <div class="container">
-                <input type="text" id="myInput" placeholder="https://www.nature.com/neuro/" width="20vw"/>
-                <button id="myButton" type="submit">
-                    <img >
-                    shorten
-                </button>
-            </div>
+                <form action="/" method="post">
+                <input type="text" id="myInput" name="url" placeholder="https://www.example.com/demo/" required />
+                <button id="myButton" type="submit">Shorten</button>
+            </form> 
+    </div>
         </body>
     "#);
