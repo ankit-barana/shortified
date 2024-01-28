@@ -69,7 +69,7 @@ fn shorten(url: &str) -> RawHtml<String> {
         database::insert_url(&connection, &short_url, &decoded_url).expect("Failed to store the URL");
     }
     RawHtml(format!(
-        "{}<div class='shortURL'>Short URL: {}</div>",
+        "{}<div class='shortURL'>Short URL: http://127.0.0.1:8000/{}</div>",
         FRONT_END.0, short_url
     ))
 }

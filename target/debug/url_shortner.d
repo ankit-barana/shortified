@@ -1,0 +1,1 @@
+/Users/ankitbarana/Desktop/git/shortified/target/debug/url_shortner: /Users/ankitbarana/Desktop/git/shortified/src/database.rs /Users/ankitbarana/Desktop/git/shortified/src/main.rs /Users/ankitbarana/Desktop/git/shortified/src/site.rs /Users/ankitbarana/Desktop/git/shortified/static/index.html
